@@ -1,0 +1,18 @@
+<div class="pokemon">
+  <h1 class="pokemon__title">
+    Listado de Pokemon
+  </h1>
+  <div class="pokemon__options">
+    <div class="pokemon__search">
+      <input type="text" class="pokemon__input" placeholder="Buscar" (input)="onChange( $event )">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <button class="pokemon__button" (click)="showAddPokemon()"><i class="fa-regular fa-plus"></i> Nuevo</button>
+  </div>
+  <app-table [pokemons]="currentPokemons" [isHeightAll]="isShowAddPokemon" (updatePokemons)="updatePokemons()"
+    (getPokemonById)="editPokemon($event)" (isNewPokemon)="noIsNewPokemon()"></app-table>
+
+  <app-add-pokemon *ngIf="isShowAddPokemon" (closeAddPokemon)="closeAddPokemon()" [pokemon]="pokemon"
+    [isNewPokemon]="isNewPokemon"></app-add-pokemon>
+</div>

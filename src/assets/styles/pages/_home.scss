@@ -1,0 +1,49 @@
+.pokemon {
+  &__title {
+    font-weight: 400;
+    font-size: 19px;
+  }
+
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__search input[type="text"] {
+    padding-left: 25px;
+  }
+  &__search i {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+  }
+
+  &__input {
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    padding: 7px;
+  }
+
+  &__input::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    color: #AAAAAA;
+  }
+
+  &__button {
+    background-color: #a150f2;
+    color: #fff;
+    padding: 7px 20px 7px 15px;
+    border: 1px solid #a150f2;
+    border-radius: 4px;
+  }
+}

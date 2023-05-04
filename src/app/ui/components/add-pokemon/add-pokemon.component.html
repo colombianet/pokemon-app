@@ -1,0 +1,48 @@
+<div class="add">
+  <h1 class="add__title">Nuevo Pokemon</h1>
+
+  <div class="add__main">
+    <form [formGroup]="addForm">
+      <div class="add__container">
+        <div class="add__content">
+          <div class="add__field">
+            <label for="" class="add__label">Nombre:</label>
+            <input type="text" class="add__input" placeholder="Nombre Pokemon" formControlName="name">
+          </div>
+
+          <div class="add__field">
+            <label for="" class="add__label">Imagen:</label>
+            <input type="text" class="add__input" placeholder="Url" formControlName="image">
+          </div>
+        </div>
+
+        <div class="add__content">
+          <div class="add__field">
+            <label for="" class="add__label">Ataque:</label>
+            <div class="add__slide">
+              0 <div class="add__range"><input type="range" min="0" max="100" formControlName="attack"></div> {{
+              addForm.get('attack')?.value == 0 ?
+              100 : addForm.get('attack')?.value}}
+            </div>
+          </div>
+
+          <div class="add__field">
+            <label for="" class="add__label">Defensa:</label>
+            <div class="add__slide">
+              0 <div class="add__range"><input type="range" min="0" max="100" formControlName="defense"></div> {{
+              addForm.get('defense')?.value == 0 ?
+              100 : addForm.get('defense')?.value}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="add__buttons">
+      <button [disabled]="addForm.invalid" class="add__button add__save" type="submit" (click)="createPokemon()"><i
+          class="fa-solid fa-floppy-disk"></i> Guardar</button>
+      <button class="add__button" (click)="cancelAddPokemon()"><i class="fa-regular fa-x"></i> Cancelar</button>
+    </div>
+    <p *ngIf="successfulProcess != ''" class="add__succesfull">{{ successfulProcess }}</p>
+  </div>
+</div>

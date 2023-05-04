@@ -1,0 +1,53 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  .modal-container {
+    background: #fff;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    .modal-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .container-buttons {
+      display: flex;
+      gap: 20px;
+
+      .button-confirm {
+        text-decoration-line: underline;
+        color: red;
+        border: none;
+        background-color: #fff;
+      }
+
+      .button-close {
+        background-color: #a150f2;
+        color: #fff;
+        padding: 7px 20px 7px 20px;
+        border: 1px solid #a150f2;
+        border-radius: 4px;
+      }
+    }
+
+
+    .modal-body {
+      margin-bottom: 20px;
+    }
+  }
+}
