@@ -2,7 +2,7 @@
   <div class="modal-container">
     <div class="modal-header">
       <h3>Eliminar Pokemon</h3>
-      <p>¿Estás seguro de eliminar a <b>{{ pokemon.name | titlecase }}</b>?</p>
+      <p *ngIf="pokemon">¿Estás seguro de eliminar a <b>{{ pokemon.name | titlecase }}</b>?</p>
       <div class="container-buttons">
         <button class="button-close" (click)="closeModal( false )">Close</button>
         <button class="button-confirm" (click)="deletPokemon()">Confirmar</button>

@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Pokemon } from 'src/app/aplication/models/pokemon.model';
-import { PokemonService } from 'src/app/aplication/use-case/pokemon.service';
+import { PokemonService } from '../../../aplication/use-case/pokemon.service';
 
 @Component({
   selector: 'app-add-pokemon',
