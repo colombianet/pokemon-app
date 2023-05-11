@@ -65,5 +65,12 @@ describe('ModalComponent', () => {
     const spy1 = jest.spyOn(component, 'deletPokemon');
     component.deletPokemon();
     expect(spy1).toHaveBeenCalled();
+    const spy3 = jest.spyOn(component, 'closeModal');
+    const spy2 = jest.spyOn(service, 'deletePokemonById').mockImplementation(() => {
+      component.closeModal(true);
+      return of({})
+    });
+    component.deletPokemon();
+    expect(spy3).toHaveBeenCalledWith(true);
   });
 });

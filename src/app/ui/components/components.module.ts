@@ -4,6 +4,7 @@ import { TableComponent } from './table/table.component';
 import { ModalComponent } from './modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
+import { PipesModule } from 'src/app/aplication/pipes/pipes.module';
 
 
 
@@ -15,7 +16,8 @@ import { AddPokemonComponent } from './add-pokemon/add-pokemon.component';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ],
   exports: [
     TableComponent,

@@ -3,4 +3,10 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+button:hover {
+  opacity: .8;
+  cursor: pointer;
+  transition: opacity ease-in-out .25s;
+}
+
 @import "assets/styles/_main.scss";

@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Subscription } from 'rxjs';
 import { Pokemon } from 'src/app/aplication/models/pokemon.model';
 import { PokemonService } from '../../../aplication/use-case/pokemon.service';
 
@@ -17,13 +16,13 @@ export class AddPokemonComponent implements OnInit {
   @Output() closeAddPokemon = new EventEmitter<boolean>();
   successfulProcess = '';
   addForm!: FormGroup;
-  isnew = true;
+  titleMain = '';
 
   constructor( private fb: FormBuilder, private pokemonSvc: PokemonService ) { }
 
-
   ngOnInit(): void {
     this.createForm();
+    this.setTitle();
   }
 
   createForm() {
@@ -34,6 +33,12 @@ export class AddPokemonComponent implements OnInit {
       defense: [this.pokemon?.defense || 0, [ Validators.required ] ],
     });
   }
+
+  setTitle() {
+    this.titleMain = this.pokemon?.name
+    ? 'Actualizar Pokemon'
+    : 'Nuevo Pokemon'
+  };
 
   createPokemon() {
     const { name, image, attack, defense } = this.addForm.value;
@@ -47,10 +52,9 @@ export class AddPokemonComponent implements OnInit {
       "idAuthor": 1
     };
 
-    !this.pokemon.name
-    ? this.createNewPokemon(currentPokemon as Pokemon)
-    :
-    this.updatePokemon(currentPokemon as Pokemon )
+    !this.pokemon?.name
+      ? this.createNewPokemon(currentPokemon as Pokemon)
+      : this.updatePokemon(currentPokemon as Pokemon )
   }
 
   private updatePokemon(currentPokemon: Pokemon) {
@@ -73,8 +77,13 @@ export class AddPokemonComponent implements OnInit {
   }
 
   cancelAddPokemon() {
-    this.isNewPokemon = false;
     this.addForm.reset();
     this.closeAddPokemon.emit( true );
+  }
+
+  valueRange( nameField: string ) {
+    return this.addForm.get( nameField )?.value == 0
+      ? 100
+      : this.addForm.get( nameField )?.value
   }
 }

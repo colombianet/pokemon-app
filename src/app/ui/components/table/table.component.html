@@ -9,13 +9,15 @@
     </tr>
     <tr *ngFor="let pokemon of pokemons">
       <td>{{ pokemon.name | titlecase }}</td>
-      <td class="table__image"><img [src]="pokemon.image" [alt]="pokemon.name" width="40px"></td>
+      <td class="table__image"><img [src]="pokemon.image | noImage" [alt]="pokemon.name" width="40px"></td>
       <td>{{ pokemon.attack }}</td>
       <td>{{ pokemon.defense }}</td>
       <td>
         <div class="table__tools">
-          <button class="table__option" (click)="editPokemon( pokemon )"><i class="fa-solid fa-pen-to-square" style="color: '#a150f2';"></i></button>
-          <button class="table__option" (click)="onDelete( pokemon )"><i class="fa-solid fa-trash" style="color: '#a150f2';"></i></button>
+          <button class="table__option" (click)="editPokemon( pokemon )"><i class="fa-solid fa-pen-to-square"
+              style="color: '#a150f2';"></i></button>
+          <button class="table__option" (click)="onDelete( pokemon )"><i class="fa-solid fa-trash"
+              style="color: '#a150f2';"></i></button>
         </div>
       </td>
     </tr>

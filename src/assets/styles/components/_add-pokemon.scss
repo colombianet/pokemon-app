@@ -38,8 +38,12 @@
     gap: 10px;
   }
 
+  &__value {
+    width: 130px;
+  }
+
   input[type="range"] {
-    width: 100%;
+    width: 130px;
     margin: 4.8px 0;
     background-color: transparent;
     -webkit-appearance: none;

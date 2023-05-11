@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Pokemon } from 'src/app/aplication/models/pokemon.model';
-import { PokemonService } from '../../../aplication/use-case/pokemon.service';
 
 @Component({
   selector: 'app-table',
@@ -17,7 +16,7 @@ export class TableComponent implements OnInit {
   showModal: boolean = false;
   currentPokemon!: Pokemon;
 
-  constructor( private pokemonSvc: PokemonService ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,4 @@
-.modal-overlay {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,44 +10,40 @@
   align-items: center;
   z-index: 9999;
 
-  .modal-container {
+  &__container {
     background: #fff;
     max-width: 500px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-    .modal-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
+  }
 
-    .container-buttons {
-      display: flex;
-      gap: 20px;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 
-      .button-confirm {
-        text-decoration-line: underline;
-        color: red;
-        border: none;
-        background-color: #fff;
-      }
+  &__container-buttons {
+    display: flex;
+    gap: 20px;
+  }
 
-      .button-close {
-        background-color: #a150f2;
-        color: #fff;
-        padding: 7px 20px 7px 20px;
-        border: 1px solid #a150f2;
-        border-radius: 4px;
-      }
-    }
+  &__button-confirm {
+    text-decoration-line: underline;
+    color: red;
+    border: none;
+    background-color: #fff;
+  }
 
-
-    .modal-body {
-      margin-bottom: 20px;
-    }
+  &__button-close {
+    background-color: #a150f2;
+    color: #fff;
+    padding: 7px 20px 7px 20px;
+    border: 1px solid #a150f2;
+    border-radius: 4px;
   }
 }

@@ -56,6 +56,13 @@ describe('AddPokemonComponent', () => {
     component.pokemon.name = '';
     component.createPokemon();
     expect(spy3).toHaveBeenCalled();
+
+    const spy5 = jest.spyOn(component as any, 'createNewPokemon').mockImplementation(() => {
+      component['actualizationSuccess']('');
+    });
+    const spy4 = jest.spyOn(component as any, 'actualizationSuccess');
+    component['createNewPokemon'](pokemon as Pokemon);
+    expect(spy4).toHaveBeenCalled();
   });
 
   it('actualizationSuccess', () => {

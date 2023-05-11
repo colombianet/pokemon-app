@@ -1,41 +1,13 @@
-<div class="modal-overlay">
-  <div class="modal-container">
-    <div class="modal-header">
+<div class="modal">
+  <div class="modal__container">
+    <div class="modal__header">
       <h3>Eliminar Pokemon</h3>
       <p *ngIf="pokemon">¿Estás seguro de eliminar a <b>{{ pokemon.name | titlecase }}</b>?</p>
-      <div class="container-buttons">
-        <button class="button-close" (click)="closeModal( false )">Close</button>
-        <button class="button-confirm" (click)="deletPokemon()">Confirmar</button>
+      <div class="modal__container-buttons">
+        <button class="modal__button-close" (click)="closeModal( false )">Close</button>
+        <button class="modal__button-confirm" (click)="deletPokemon()">Confirmar</button>
       </div>
       <p *ngIf="successfulProcess != ''" style="color: red;">{{ successfulProcess | titlecase }}!</p>
     </div>
   </div>
 </div>
-
-<!-- <div class="modal-overlay">
-  <div class="modal-container">
-    <div class="modal-header">
-      <h3>Nuevo Pokemon</h3>
-      <div class="container-info">
-        <div class="container-row">
-          <div class="field">
-            <label for="Nombre:">Nombre:</label>
-            <input type="text" placeholder="Nombre Pokemon">
-          </div>
-
-        </div>
-        <div class="container-row">
-          <div class="field">
-            <label for="Nombre:">Imagen:</label>
-            <input type="text" placeholder="url">
-          </div>
-        </div>
-      </div>
-
-      <div class="container-buttons">
-        <button class="button-close" (click)="closeModal()">Close</button>
-        <button class="button-confirm" (click)="deletPokemon( pokemon.id )">Confirmar</button>
-      </div>
-    </div>
-  </div>
-</div> -->
